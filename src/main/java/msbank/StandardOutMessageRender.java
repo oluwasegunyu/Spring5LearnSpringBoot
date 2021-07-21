@@ -1,5 +1,9 @@
 package msbank;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+@Service("renderer")
 public class StandardOutMessageRender implements MessageRender{
     private MessageProvider messageProvider;
 
@@ -14,11 +18,13 @@ public class StandardOutMessageRender implements MessageRender{
     }
 
     @Override
+    @Autowired
     public void setMessageProvider(MessageProvider provider){
         this.messageProvider = provider;
     }
 
     @Override
+    @Autowired
     public MessageProvider getMessageProvider(){
         return this.messageProvider;
     }
